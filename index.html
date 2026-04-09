@@ -63,74 +63,57 @@
 .slide.active {
   opacity: 1;
 }
- /* ===== GALLERY SECTION ===== */
+/* ------------------ General Styles ------------------ */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+/* ------------------ Gallery Styles ------------------ */
 .gallery {
-  padding: 50px 20px;
-  text-align: center;
-  background: #f8f9fa;
+  display: flex;
+  flex-direction: column; /* Images ek ke niche ek */
+  align-items: center;    /* Center me align */
+  gap: 20px;              /* Images ke beech gap */
+  padding: 20px;           /* Optional padding */
 }
 
-.gallery h2 {
-  margin-bottom: 25px;
-  color: #28a745;
-  font-size: 28px;
+.gallery img {
+  width: 90%;            /* Mobile friendly width */
+  max-width: 400px;      /* Desktop max size */
+  height: auto;          /* Aspect ratio maintain */
+  border-radius: 10px;   /* Optional rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional shadow */
+  transition: transform 0.3s ease;
 }
 
-/* GRID LAYOUT */
-.gallery-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* desktop 3 images */
-  gap: 20px;
+.gallery img:hover {
+  transform: scale(1.05); /* Hover effect */
 }
 
-/* IMAGE CARD */
-.gallery-item {
-  overflow: hidden;
-  border-radius: 12px;
-}
-
-/* IMAGE */
-.gallery-item img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  transition: 0.4s;
-}
-
-/* HOVER EFFECT */
-.gallery-item:hover img {
-  transform: scale(1.1);
-}
-
-/* ===== MOBILE VIEW ===== */
-@media (max-width: 768px) {
-  .gallery-container {
-    grid-template-columns: repeat(2, 1fr); /* 🔥 2 images only */
-    gap: 12px;
-  }
-
-  .gallery-item img {
-    height: 180px; /* mobile friendly */
+/* ------------------ Responsive ------------------ */
+@media (max-width: 600px) {
+  .gallery img {
+    width: 100%;         /* Full width on small screens */
+    max-width: 100%;
   }
 }
-/* ===== MOBILE FIX (2 images + bigger size) ===== */
-@media (max-width: 768px) {
 
-  .gallery-container {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;  /* 🔥 2 images */
-    gap: 15px;
-  }
+/* ------------------ Other Elements ------------------ */
+/* Optional button style example */
+button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-  .gallery-item {
-    width: 100%;
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: 220px !important;  /* 🔥 size bada */
-    object-fit: cover;
-  }
+button:hover {
+  background-color: #45a049;
 }
   /* Footer */
 .footer {
