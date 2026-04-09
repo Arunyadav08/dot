@@ -4,188 +4,222 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Book Now - Cafe 65</title>
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif;}
+/* RESET & BASE */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI', sans-serif;}
+body { display:flex; flex-direction:column; background:#f5f5f5; }
 
-/* BODY FIX */
-body {
-  display:flex;
-  flex-direction:column;
-}
-
-/* MAIN LAYOUT */
+/* MAIN LAYOUT DESKTOP */
 .main {
   display:flex;
-  height:100vh;
+  height:34cm;
+  gap:10px;
+  padding:10px;
 }
 
-/* LEFT & RIGHT IMAGE GRID */
+/* LEFT & RIGHT SIDE IMAGES */
 .side {
   width:25%;
   display:flex;
   flex-direction:column;
+  gap:5px;
 }
-
 .side img {
   width:100%;
-  height:33.33%;
+  height:calc((100vh - 40px)/5);
   object-fit:cover;
+  border-radius:10px;
+  transition: transform 0.3s;
 }
+.side img:hover { transform:scale(1.03); }
 
-/* CENTER WITH IMAGE */
+/* CENTER BOX DESKTOP */
 .center {
-  width:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:relative;
-
-  background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4');
-  background-size:cover;
-  background-position:center;
+  width: 50%;
+  height: 32.8cm; /* fixed height in cm */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4');
+  background-size: cover;        /* full cover */
+  background-position: center;   /* center alignment */
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-/* DARK OVERLAY */
+/* Overlay for dark effect */
 .center::before {
-  content:"";
-  position:absolute;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.4);
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
 }
 
-/* BOX */
+/* Box content inside center */
 .box {
-  position:relative;
-  z-index:1;
-  background:white;
-  padding:30px;
-  width:80%;
-  text-align:center;
-  box-shadow:0 0 20px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+  background: white;
+  padding: 30px;
+  width: 80%;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
-/* TEXT */
 .box p {
-  font-size:13px;
-  margin-bottom:15px;
+  font-size: 13px;
+  margin-bottom: 15px;
+  color: #333;
+  line-height: 1.4;
 }
 
-/* BUTTONS */
 .btn {
-  display:block;
-  background:#111;
-  color:white;
-  padding:12px;
-  margin:8px 0;
-  text-decoration:none;
-  font-size:14px;
-  border-radius:5px;
+  display: block;
+  background: #111;
+  color: white;
+  padding: 12px;
+  margin: 8px 0;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
 .btn:hover {
-  background:#28a745;
+  background: #28a745;
 }
 
-/* CONTACT */
 .contact {
-  margin-top:15px;
-  font-size:13px;
-  color:#555;
+  margin-top: 15px;
+  font-size: 13px;
+  color: #555;
 }
-
-/* FOOTER */
+/* FOOTER DESKTOP */
 .footer {
   background: linear-gradient(to right, #1c1c1c, #2b2b2b);
-  color: white;
-  padding: 40px 20px;
+  color:white;
+  padding:60px 30px;
 }
-
 .footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:30px;
 }
-
 .footer-left h2 {
-  margin-bottom: 15px;
+  margin-bottom:25px;
+  font-size:18px;
+  line-height:1.4;
 }
-
 .email-box {
-  display: flex;
-  margin-bottom: 15px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:15px;
+  margin-bottom:20px;
 }
-
 .email-box input {
-  padding: 10px;
-  border: none;
-  width: 70%;
+  flex:1 1 60%;
+  padding:15px;
+  border:none;
+  border-radius:6px;
+  font-size:14px;
 }
-
 .email-box button {
-  padding: 10px;
-  border: none;
-  background: white;
-  cursor: pointer;
+  flex:1 1 35%;
+  padding:12px;
+  border:none;
+  border-radius:6px;
+  background:white;
+  font-size:17px;
+  cursor:pointer;
 }
-
 .footer-right {
-  display: flex;
-  gap: 40px;
+  display:flex;
+  gap:60px;
+  flex-wrap:wrap;
 }
-
-.footer-right h3 {
-  margin-bottom: 10px;
-}
-
-.footer-right p {
-  margin: 5px 0;
-}
-
+.footer-right h3 { margin-bottom:18px; font-size:22px; }
+.footer-right p { margin:7px 0; font-size:20px; }
 .footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  border-top: 1px solid #444;
-  padding-top: 10px;
+  text-align:center;
+  margin-top:30px;
+  border-top:1px solid #444;
+  padding-top:20px;
+  font-size:19px;
+  font-weight:500;
+}
+/* ---------------- MOBILE ---------------- */
+@media(max-width:900px){
+
+  .main { flex-direction:column; height:auto; }
+
+  .side { flex-direction:row; justify-content:space-between; width:100%; }
+
+  .side img {
+    width:32%;
+    height:60px;
+  }
+
+  /* HIDE BOTTOM IMAGES */
+  .side:last-child {
+    display:none;
+  }
+
+  .center {
+    width:100%;
+    padding:5px 0;
+  }
+
+  .box {
+    width:95%;
+    padding:12px;
+  }
+
+  .btn {
+    width:48%;
+    font-size:13px;
+    padding:10px 0;
+  }
 }
 </style>
 </head>
-
 <body>
 
 <div class="main">
 
-<!-- LEFT -->
-<div class="side">
-  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
-  <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
-  <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061">
-</div>
-
-<!-- CENTER -->
-<div class="center">
-  <div class="box">
-    <p>For reservations larger than 10 guests, please email directly.</p>
-    <p>7% service fee applies on weekends.</p>
-
-    <a href="#" class="btn">Cafe 65 - Mahendergarh</a>
-    <a href="#" class="btn">Cafe 65 - Delhi</a>
-    <a href="#" class="btn">Cafe 65 - Gurgaon</a>
-    <a href="#" class="btn">Cafe 65 - Jaipur</a>
-    <a href="#" class="btn">Cafe 65 - Chandigarh</a>
-    <a href="#" class="btn">Cafe 65 - Noida</a>
-
-    <div class="contact">Contact Us</div>
+  <!-- LEFT SIDE IMAGES -->
+  <div class="side">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Left 1">
+    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349" alt="Left 2">
+    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061" alt="Left 3">
   </div>
-</div>
 
-<!-- RIGHT -->
-<div class="side">
-  <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
-  <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
-  <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096">
-</div>
+  <!-- CENTER -->
+  <div class="center">
+    <div class="box">
+      <p>For reservations larger than 10 guests, please email directly.</p>
+      <p>7% service fee applies on weekends.</p>
+
+      <a href="#" class="btn">Cafe 65 - Mahendergarh</a>
+      <a href="#" class="btn">Cafe 65 - Delhi</a>
+      <a href="#" class="btn">Cafe 65 - Gurgaon</a>
+      <a href="#" class="btn">Cafe 65 - Jaipur</a>
+      <a href="#" class="btn">Cafe 65 - Chandigarh</a>
+      <a href="#" class="btn">Cafe 65 - Noida</a>
+
+      <div class="contact">Contact Us</div>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDE IMAGES -->
+  <div class="side">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Right 1">
+    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348" alt="Right 2">
+    <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096" alt="Right 3">
+  </div>
 
 </div>
 
@@ -194,7 +228,7 @@ body {
   <div class="footer-container">
 
     <div class="footer-left">
-        <h2>SIGN UP TO RECEIVE 10% <br> OFF YOUR FIRST ORDER</h2>
+      <h2>SIGN UP TO RECEIVE 10% <br> OFF YOUR FIRST ORDER</h2>
       <div class="email-box">
         <input type="email" placeholder="Enter your email">
         <button>➜</button>
@@ -203,7 +237,7 @@ body {
 
     <div class="footer-right">
       <div>
-       <h3>QUICK LINKS</h3>
+        <h3>QUICK LINKS</h3>
         <p>Book Now</p>
         <p>Order Online</p>
         <p>Locations</p>
@@ -227,7 +261,7 @@ body {
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; 2026 Cafe 65. All rights reserved. Powered by Arun kumar</p>
+    &copy; 2026 Cafe 65. All rights reserved. Powered by Arun kumar
   </div>
 </section>
 
