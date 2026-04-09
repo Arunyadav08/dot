@@ -29,26 +29,11 @@ body {
 /* CENTER */
 .center {
   width:50%;
+  background:#f2f2f2;
   display:flex;
   justify-content:center;
   align-items:center;
-
-  /* 👇 Background image */
-  background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4');
-  background-size: cover;
-  background-position: center;
-  position: relative;
 }
-  .center::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-}
-  
 
 .box {
   background:white;
@@ -56,10 +41,6 @@ body {
   width:80%;
   text-align:center;
   box-shadow:0 0 20px rgba(0,0,0,0.2);
-  .box {
-  position: relative;
-  z-index: 1;
-}
 }
 
 /* TEXT */
@@ -91,8 +72,41 @@ body {
 }
 </style>
 </head>
-  <body>
-   <!-- Left Side -->
+
+<body>
+
+<!-- LEFT IMAGES -->
+<div class="side">
+  <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
+  <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+  <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061">
+</div>
+
+<!-- CENTER -->
+<div class="center">
+  <div class="box">
+    <p>For reservations larger than 10 guests, please email directly.</p>
+    <p>7% service fee applies on weekends.</p>
+
+    <a href="#" class="btn">Cafe 65 - Mahendergarh</a>
+    <a href="#" class="btn">Cafe 65 - Delhi</a>
+    <a href="#" class="btn">Cafe 65 - Gurgaon</a>
+    <a href="#" class="btn">Cafe 65 - Jaipur</a>
+    <a href="#" class="btn">Cafe 65 - Chandigarh</a>
+    <a href="#" class="btn">Cafe 65 - Noida</a>
+
+    <div class="contact">Contact Us</div>
+  </div>
+</div>
+
+<!-- RIGHT IMAGES -->
+<div class="side">
+  <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93">
+  <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348">
+  <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096">
+</div>
+
+    <!-- Left Side -->
      <section class="footer">
   <div class="footer-container">
     <div class="footer-left">
