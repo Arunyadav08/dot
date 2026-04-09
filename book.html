@@ -29,11 +29,26 @@ body {
 /* CENTER */
 .center {
   width:50%;
-  background:#f2f2f2;
   display:flex;
   justify-content:center;
   align-items:center;
+
+  /* 👇 Background image */
+  background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4');
+  background-size: cover;
+  background-position: center;
+  position: relative;
 }
+  .center::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+  
 
 .box {
   background:white;
@@ -41,6 +56,10 @@ body {
   width:80%;
   text-align:center;
   box-shadow:0 0 20px rgba(0,0,0,0.2);
+  .box {
+  position: relative;
+  z-index: 1;
+}
 }
 
 /* TEXT */
