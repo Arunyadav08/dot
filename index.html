@@ -252,6 +252,20 @@
 </section>
    <section class="footer">
   <div class="footer-container">
+    <script>
+  // Hero Slider JS
+  let slides = document.querySelectorAll('.slide');
+  let current = 0;
+  function showSlide(index){
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
+  setInterval(()=>{
+    current++;
+    if(current>=slides.length) current=0;
+    showSlide(current);
+  },3000);
+</script>
 
     <!-- Left Side -->
     <div class="footer-left">
@@ -262,9 +276,9 @@
       </div>
 
       <div class="social-icons">
-        <span>📘</span>
-        <span>📸</span>
-        <span>🎵</span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
 
@@ -293,20 +307,7 @@
     </div>
 
   </div>
-<script>
-  // Hero Slider JS
-  let slides = document.querySelectorAll('.slide');
-  let current = 0;
-  function showSlide(index){
-    slides.forEach(slide => slide.classList.remove('active'));
-    slides[index].classList.add('active');
-  }
-  setInterval(()=>{
-    current++;
-    if(current>=slides.length) current=0;
-    showSlide(current);
-  },3000);
-</script>
+
   </section>
 <footer>
   <p>&copy; 2026 Cafe 65. All rights reserved.</p>
