@@ -77,23 +77,20 @@ body {
 
 /* --- Gallery Container --- */
 .gallery {
-  display: flex;
-  flex-direction: column; /* One below another */
-  align-items: center;    /* Center horizontally */
-  width: 100%;
-  padding: 10px;
-  gap: 15px;              /* Space between images */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 images per row */
+  gap: 15px;
+  padding: 20px;
+  justify-items: center;
 }
 
-/* --- Images --- */
 .gallery img {
-  width: 100%;            /* Full width of container */
-  max-width: 500px;       /* Max width on desktop */
-  height: auto;           /* Keep aspect ratio */
-  border-radius: 10px;    /* Rounded corners */
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  display: block;         /* Remove inline spacing issues */
-  object-fit: cover;      /* Images scale properly */
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
@@ -101,25 +98,14 @@ body {
   transform: scale(1.03);
 }
 
-/* --- Make Sure Page is Responsive --- */
-html {
-  width: 100%;
-  overflow-x: hidden;
-}
-
 @media (max-width: 768px) {
-  .gallery img {
-    max-width: 100%;      /* Fit tablet and mobile screens */
-  }
-}
-
-@media (max-width: 480px) {
   .gallery {
-    padding: 5px;
-    gap: 10px;
+    grid-template-columns: 1fr; /* 1 image per row on mobile */
+    padding: 10px;
   }
+
   .gallery img {
-    border-radius: 5px;
+    max-width: 100%;
   }
 }
   /* Footer */
@@ -265,27 +251,27 @@ nav a {
   <div class="gallery-container ">
 
     <div class="gallery-item">
-      <img src="gallery1.jpg">
+      <img src="gallery1.jpg" alt="Gallery Image 1">
     </div>
 
     <div class="gallery-item">
-      <img src="gallery2.jpg">
+      <img src="gallery2.jpg" alt="Gallery Image 2">
     </div>
 
     <div class="gallery-item">
-      <img src="gallery3.jpg">
+      <img src="gallery3.jpg" alt="Gallery Image 3">
     </div>
 
     <div class="gallery-item">
-      <img src="gallery4.jpg">
+      <img src="gallery4.jpg" alt="Gallery Image 4">
     </div>
 
     <div class="gallery-item">
-      <img src="gallery5.jpg">
+      <img src="gallery5.jpg" alt="Gallery Image 5">
     </div>
 
     <div class="gallery-item">
-      <img src="gallery6.jpg">
+      <img src="gallery6.jpg" alt="Gallery Image 6">
     </div>
 
   </div>
