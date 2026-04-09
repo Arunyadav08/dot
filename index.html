@@ -62,6 +62,39 @@
 .slide.active {
   opacity: 1;
 }
+    /* Gallery Section */
+.gallery {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.gallery h2 {
+  margin-bottom: 20px;
+  color: #28a745;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Hover effect */
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
 
 /* IMPORTANT FIX */
 .slide h1 {
@@ -110,7 +143,37 @@
   </div>
 </section>
 
+<section class="gallery">
+  <h2>Our Cafe Gallery</h2>
+  <div class="gallery-container">
 
+    <div class="gallery-item">
+      <img src="https://source.unsplash.com/400x300/?cafe,coffee" alt="Cafe Image">
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://source.unsplash.com/400x300/?coffee,latte" alt="Cafe Image">
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://source.unsplash.com/400x300/?restaurant,cafe" alt="Cafe Image">
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://source.unsplash.com/400x300/?coffee,shop" alt="Cafe Image">
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://source.unsplash.com/400x300/?breakfast,cafe" alt="Cafe Image">
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://source.unsplash.com/400x300/?coffee,beans" alt="Cafe Image">
+    </div>
+
+  </div>
+</section>
+  
 <footer>
   <p>&copy; 2026 Cafe 65. All rights reserved.</p>
 </footer>
