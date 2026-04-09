@@ -90,6 +90,82 @@
   display: block;
   transition: transform 0.4s ease;
 }
+    /* Footer */
+.footer {
+  background: linear-gradient(to right, #1c1c1c, #2b2b2b);
+  color: white;
+  padding: 50px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Left */
+.footer-left {
+  max-width: 400px;
+}
+
+.footer-left h2 {
+  margin-bottom: 20px;
+}
+
+.email-box {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.email-box input {
+  padding: 10px;
+  border: none;
+  outline: none;
+  width: 70%;
+  border-radius: 5px 0 0 5px;
+}
+
+.email-box button {
+  padding: 10px 15px;
+  border: none;
+  background: white;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+
+/* Social icons */
+.social-icons span {
+  margin-right: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Right */
+.footer-right {
+  display: flex;
+  gap: 50px;
+}
+
+.footer-right h3 {
+  margin-bottom: 10px;
+}
+
+.footer-right p {
+  margin: 5px 0;
+  cursor: pointer;
+}
+
+.footer-right p:hover {
+  text-decoration: underline;
+}
+
+/* Bottom */
+.footer-bottom {
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  text-align: center;
+}
 
 /* Hover effect */
 .gallery-item:hover img {
@@ -178,6 +254,49 @@
   <p>&copy; 2026 Cafe 65. All rights reserved.</p>
 </footer>
 
+  <section class="footer">
+  <div class="footer-container">
+
+    <!-- Left Side -->
+    <div class="footer-left">
+      <h2>SIGN UP TO RECEIVE 10% <br> OFF YOUR FIRST ORDER</h2>
+      <div class="email-box">
+        <input type="email" placeholder="Enter your email">
+        <button>➜</button>
+      </div>
+
+      <div class="social-icons">
+        <span>📘</span>
+        <span>📸</span>
+        <span>🎵</span>
+      </div>
+    </div>
+
+    <!-- Right Side -->
+    <div class="footer-right">
+      <div>
+        <h3>QUICK LINKS</h3>
+        <p>Book Now</p>
+        <p>Order Online</p>
+        <p>Locations</p>
+        <p>Menu</p>
+        <p>Specials</p>
+        <p>Gift Card</p>
+        <p>Contact</p>
+      </div>
+
+      <div>
+        <h3>COLLECTIONS</h3>
+        <p>Speciality Beans</p>
+        <p>Keep Cups and Bottles</p>
+        <p>Premium Matcha</p>
+        <p>Powders and Syrups</p>
+        <p>Milk Lab</p>
+        <p>Merch</p>
+      </div>
+    </div>
+
+  </div>
 <script>
   // Hero Slider JS
   let slides = document.querySelectorAll('.slide');
