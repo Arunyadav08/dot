@@ -19,19 +19,24 @@ body { display:flex; flex-direction:column; background:#f5f5f5; }
 
 /* LEFT & RIGHT SIDE IMAGES */
 .side {
-  width:25%;
-  display:flex;
-  flex-direction:column;
-  gap:5px;
+  width: 25%;
+  height: 100%; /* IMPORTANT: match parent (.main) height */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
 .side img {
-  width:100%;
-  height:calc((100vh - 40px)/5);
-  object-fit:cover;
-  border-radius:10px;
+  width: 100%;
+  height: calc((100% - 20px) / 3); /* 3 images + gap adjust */
+  object-fit: cover;
+  border-radius: 10px;
   transition: transform 0.3s;
 }
-.side img:hover { transform:scale(1.03); }
+
+.side img:hover {
+  transform: scale(1.03);
+}
 
 /* CENTER BOX DESKTOP */
 .center {
